@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/welcome', function (){
+    return 'Welcome to my first application';
+});
+
+Route::post('/post', function(Request $request){
+
+});
+Route::get('/post/{post_id}', function(string $post_id){
+    return 'post_' . $post_id;
+});
+
+Route::post('/edit/{id}', function(Request $request, string $user_id){
+
+});
+
+Route::put('/modify/{id}{name?}', function(Request $request, string $id, string $name="Victor"){
+    
 });
